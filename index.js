@@ -1,5 +1,4 @@
-"use strict"
-
+'use strict'
 const vl = require('./vl');
 
 const patientId = [
@@ -16,13 +15,13 @@ const patientId = [
 ];
 function start() {
   console.log("App started..");
-  // vl.getPatientVl("14701-00138")
-  //   .then((result) => {
-  //     console.log("Result ", result);
-  //   })
-  //   .catch((error) => {
-  //     console.log("Error :", error);
-  //   });
+  vl.getPatientVl("14701-00138")
+     .then((result) => {
+       console.log("Result ", result);
+     })
+     .catch((error) => {
+      console.log("Error :", error);
+    });
 }
 
 start();

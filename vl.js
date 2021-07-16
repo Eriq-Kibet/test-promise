@@ -1,40 +1,40 @@
-"strict"
+"use strict"
 const axios = require('axios');
 const qs = require('qs');
 
 const def = {
-    getPatientVl
-}
+    getPatientVl: getPatientVl
+};
 function getPatientVl(patientId){
-    return new Promise((res, rej)=>{
-        const data = qs.stringify({
+    return new Promise((resolve, reject)=>{
+        var data = qs.stringify({
             'start_date': '2021-07-14',
             'end_date': '2021-07-16',
             'date_dispatched_start': '2021-07-14',
             'date_dispatched_end': '2021-07-16',
-            'test': '2',
-            'patient_id': `${patientId}`
+            'test': '2' 
           });
-          const config = {
-            method: "post",
-            url: "https://ampath.nascop.org/api/function",
+          var config = {
+            method: 'post',
+            url: 'https://ampath.nascop.org/api/function',
             headers: { 
-              "Content-Type": "application/x-www-form-urlencoded", 
-              "apikey": "hbSNAer4anou3YoqE5"
+              'Content-Type': 'application/x-www-form-urlencoded', 
+              'apikey': 'hbSNAer4anou3YoqE5'
             },
             data : data
           };
-          ​
-        axios(config)
-        .then(function (response) {
-          console.log(JSON.stringify(response.data));
-          res(response.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-          rej(error)
-        });
-    })
+          
+          axios(config)
+          .then(function (response) {
+            console.log(JSON.stringify(response.data));
+            resolve(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
+            reject('Error', error);
+          });
+        
+    });
     
 
 }
