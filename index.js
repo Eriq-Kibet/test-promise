@@ -13,6 +13,7 @@ const patientId = [
   "14701-04374",
   "14701-00138",
 ];
+
 function start() {
   console.log("App started..");
   vl.getPatientVl("14701-00138")
