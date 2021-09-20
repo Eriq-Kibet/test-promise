@@ -18,7 +18,7 @@ function start() {
   console.log("App started..");
   vl.getPatientVl("14701-00138")
      .then((result) => {
-       console.log("Result ", result);
+       console.log(" Patient Result ", result);
      })
      .catch((error) => {
       console.log("Error :", error);
