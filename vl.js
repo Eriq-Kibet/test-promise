@@ -27,11 +27,9 @@ function getPatientVl(patientId) {
 
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
         resolve(response.data);
       })
       .catch(function (error) {
-        console.log(error);
         reject("Error", error);
       });
   });
