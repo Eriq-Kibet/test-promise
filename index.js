@@ -15,13 +15,10 @@ const patientId = [
 ];
 
 function start() {
-  console.log("App started..");
   vl.getPatientVl("14701-00138")
      .then((result) => {
-       console.log(" Patient Results ", result);
      })
      .catch((error) => {
-      console.log("Error Message :", error);
     });
 }
 
